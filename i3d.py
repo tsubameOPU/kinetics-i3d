@@ -188,6 +188,7 @@ class InceptionI3d(snt.AbstractModule):
     end_point = 'MaxPool3d_3a_3x3'
     net = tf.nn.max_pool3d(net, ksize=[1, 1, 3, 3, 1], strides=[1, 1, 2, 2, 1],
                            padding=snt.SAME, name=end_point)
+    
     end_points[end_point] = net
     if self._final_endpoint == end_point: return net, end_points
 
